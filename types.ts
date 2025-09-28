@@ -4,6 +4,8 @@ export interface Task {
   title: string;
   progress: number;
   completed?: boolean;
+  status: 'completed' | 'in_progress' | 'not_started' | 'blocked';
+  dueDate?: Date;
 }
 
 export interface Goal {
@@ -43,4 +45,3 @@ export type HierarchyEntity =
   | ({ type: 'objective' } & Objective)
   | ({ type: 'goal' } & Goal)
   | ({ type: 'task' } & Task);
-

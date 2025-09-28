@@ -1,55 +1,9 @@
+
 import React, { useState } from 'react';
 import type { Dream, Objective, Goal, Task, HierarchyEntity } from '../types';
 import { DreamsIcon, ObjectivesIcon, GoalsIcon, TasksIcon, ChevronDownIcon, ChevronRightIcon, PlusIcon } from './icons';
 import ProgressBar from './ProgressBar';
-
-const hierarchyData: Dream[] = [
-  {
-    id: 'D-001',
-    title: 'Launch new software product',
-    description: 'Develop and launch a new productivity software product',
-    startDate: new Date(2025, 0, 1),
-    deadline: new Date(2025, 11, 31),
-    priority: 'high',
-    progress: 45,
-    objectives: [
-      {
-        id: 'O-001',
-        title: 'Expand regional sales',
-        description: 'Increase market presence in the Northeast region',
-        startDate: new Date(2025, 0, 1),
-        deadline: new Date(2024, 2, 31), // Overdue
-        priority: 'high',
-        progress: 72.5,
-        goals: [
-          {
-            id: 'M-07',
-            title: 'Product Launch Campaign',
-            description: 'Execute marketing campaign for product launch',
-            startDate: new Date(2025, 0, 1),
-            dueDate: new Date(2025, 0, 31),
-            progress: 55,
-            tasks: [
-              { id: 'T-001', title: 'Create marketing materials', progress: 100 },
-              { id: 'T-002', title: 'Set up social media accounts', progress: 100 },
-              { id: 'T-003', title: 'Develop email campaign', progress: 75 },
-            ],
-          },
-        ],
-      },
-      {
-        id: 'O-002',
-        title: 'Achieve Product-Market Fit',
-        description: 'Ensure the product meets strong market demand.',
-        startDate: new Date(2025, 0, 1),
-        deadline: new Date(2025, 5, 30),
-        priority: 'high',
-        progress: 30,
-        goals: [],
-      }
-    ],
-  },
-];
+import { hierarchyData } from '../data/sampleData';
 
 const isOverdue = (deadline: Date, progress: number) => {
     return new Date() > deadline && progress < 100;
@@ -78,9 +32,9 @@ const TreeItem: React.FC<{
             <div className="absolute left-0 top-6 h-px w-4 bg-neutral-200 dark:bg-neutral-700"></div>
             <div 
                 className="flex items-center py-2 group"
-                onClick={() => { onSelect(); }}
+                onClick={onSelect}
             >
-                <div className="flex items-center flex-1 cursor-pointer" onClick={(e) => { e.stopPropagation(); onSelect(); }}>
+                <div className="flex items-center flex-1 cursor-pointer">
                     <span className="mr-2 text-neutral-500">{icon}</span>
                     <div className="flex-1">
                         <div className="flex items-center">

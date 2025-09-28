@@ -5,6 +5,7 @@ import AppShell from './components/AppShell';
 import Dashboard from './pages/Dashboard';
 import StrategicHierarchy from './pages/StrategicHierarchy';
 import ReportDashboard from './pages/ReportDashboard';
+import CalendarPage from './pages/CalendarPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 const App: React.FC = () => {
@@ -17,7 +18,7 @@ const App: React.FC = () => {
         <Route path="/goals" element={<StrategicHierarchy />} />
         <Route path="/tasks" element={<Dashboard />} />
         <Route path="/reports" element={<ReportDashboard />} />
-        <Route path="/calendar" element={<PlaceholderPage title="Calendar" />} />
+        <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/settings" element={<PlaceholderPage title="Settings" />} />
       </Routes>
     </AppShell>
