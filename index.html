@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strategic Progress Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // or 'media'
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#1173d4', // User specified dark blue
+                dark: '#0e5aa8',
+                '50': '#e7f1fc',
+                '100': '#d0e3f9',
+                '800': '#1b4f8c'
+              },
+              secondary: {
+                DEFAULT: '#3f37c9',
+                '100': '#e8e7fa',
+                '800': '#2a2588',
+              },
+              accent: {
+                DEFAULT: '#4cc9f0',
+                '100': '#eefcff',
+                '800': '#008ba3',
+              },
+              success: {
+                DEFAULT: '#4ade80',
+                '100': '#f0fdf4',
+                '800': '#166534',
+              },
+              warning: {
+                DEFAULT: '#facc15',
+                '100': '#fefce8',
+                '800': '#854d0e',
+              },
+              danger: {
+                DEFAULT: '#f72585',
+                '100': '#ffeaf2',
+                '800': '#b0004e',
+              },
+              'neutral-50': '#f8f9fa',
+              'neutral-100': '#f1f3f5',
+              'neutral-200': '#e9ecef',
+              'neutral-300': '#dee2e6',
+              'neutral-400': '#ced4da',
+              'neutral-500': '#adb5bd',
+              'neutral-600': '#6c757d',
+              'neutral-700': '#495057',
+              'neutral-800': '#343a40',
+              'neutral-900': '#212529',
+              'dark-bg': '#121212',
+              'dark-card': '#1e1e1e',
+              'dark-border': '#3c3c3c',
+            },
+            borderRadius: {
+              'sm': '0.25rem',
+              'md': '0.5rem',
+              'lg': '0.75rem',
+              'xl': '1rem',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f9fa;
+      }
+      .dark body {
+        background-color: #121212;
+      }
+       /* Simple scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f3f5;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #2d2d2d;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #adb5bd;
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #555555;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6c757d;
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #777777;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .tab-content.active {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
